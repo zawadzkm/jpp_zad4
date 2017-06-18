@@ -1,0 +1,3381 @@
+"6:58:05 PM, Wednesday, March 30, 2016: Compressed sources"!
+
+DevelopmentSessionManager installNew!
+
+SessionManager current defaultResourceLibrary loadFlags: 0.
+SessionManager current stashBootInfo!
+
+"Ensure all structures have calculated size to avoid recompilation messages later"
+ExternalStructure allSubclasses do: [:e | e byteSize]!
+
+"Mark all the booted packages as base"
+Package manager markAllPackagesAsBase!
+
+SessionManager current saveImage!
+
+"6:59:05 PM, Wednesday, March 30, 2016: Image saved"!
+
+"Remove rogue .img and unnecessary .chg files"
+File delete: (File default: SessionManager current imagePath extension: 'img').
+File delete: 'DBOOT.chg'!
+
+SessionManager current quit!
+
+"14:34:11, 14 czerwca 2017: Dolphin Smalltalk Professional started"!
+
+"14:46:35, 14 czerwca 2017: Image saved"!
+
+"14:47:26, 14 czerwca 2017: Image saved to 'C:\Users\zawadzkm\Desktop\Smalltalk\prolog.img7'"!
+
+"14:48:50, 14 czerwca 2017: Uninstalling package 'prolog'"!
+
+Object subclass: #Term
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+Term guid: (GUID fromString: '{E8BA7277-9580-4EA2-8D18-C508A94AB599}')!
+Term comment: ''!
+!Term categoriesForClass!Kernel-Objects! !
+Term subclass: #C
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+C guid: (GUID fromString: '{DF2CB3DC-C88C-46E8-AAAC-E10B2B05983A}')!
+C comment: ''!
+!C categoriesForClass!Kernel-Objects! !
+!C class methodsFor!
+% conts
+	^conts! !
+!C class categoriesFor: #%!public! !
+
+C % 4!
+
+| c |
+c := C % 4
+Transcript show: c!
+
+| c |
+c := C % 4
+Transcript show: C % 4!
+
+| c |
+c := C % 4
+Transcript show: c printString!
+
+| c |
+c := C % 4
+Transcript show: (c printString)!
+
+| c |
+c := C % 4
+Transcript show: 0 printString!
+
+c := C % 4
+Transcript show: 0 printString!
+
+0 printString!
+
+0 printString!
+
+c := C % 4
+Transcript show: 'ala'!
+
+Transcript show: 'ala'!
+
+Transcript show: 1 printString!
+
+c := C % 4!
+
+
+c := C % 4
+Transcript show: c printString!
+
+c := C % 4
+Transcript show: (c printString)!
+
+| c s|
+c := C % 4.
+s := c class printString.
+Transcript show: s.!
+
+| c s|
+c := C % 4.
+s := c printString.
+Transcript show: s.!
+
+| c s|
+c := C % 4.
+s := c printString.
+Transcript show: (c printString).!
+
+| c s|
+c := C % 4.
+s := c printString.
+Transcript show: c printString.!
+
+Term subclass: #V
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+V guid: (GUID fromString: '{DDABE01C-417F-4D54-B423-2AB741E67FC0}')!
+V comment: ''!
+!V categoriesForClass!Kernel-Objects! !
+!V class methodsFor!
+@ name
+	! !
+!V class categoriesFor: #@!public! !
+
+Term subclass: #V
+	instanceVariableNames: ''
+	classVariableNames: 'variables'
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+Term subclass: #V
+	instanceVariableNames: ''
+	classVariableNames: 'Variables'
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+!V class methodsFor!
+initialize
+	Variables := Set new! !
+!V class categoriesFor: #initialize!private! !
+
+!V class methodsFor!
+@ name
+	| exists v | 
+	exists := Variables includesKey: name.
+	exists 
+		ifTrue: [^Variables at: name] 
+		ifFalse: [v := V new.
+				Variables add: name -> v.
+				^v. 
+				]! !
+!V class categoriesFor: #@!public! !
+
+!V class methodsFor!
+new: aName
+	 ^(self new)
+        name: aName ;
+        yourself.! !
+!V class categoriesFor: #new:!public! !
+
+!V class methodsFor!
+@ aName
+	| exists var | 
+	exists := Variables includesKey: aName.
+	exists 
+		ifTrue: [^Variables at: aName] 
+		ifFalse: [var := V new.
+				Variables add: aName -> var.
+				^var. 
+				]! !
+!V class categoriesFor: #@!public! !
+
+c := C % 4.
+s := c printString.
+Transcript show: c printString.!
+
+|c v1 v2|
+c := C % 4.
+v1 := V @ 1.
+v2 := V @ 1.
+
+e := v1 = v2.
+Transcript show: e astString.!
+
+!V class methodsFor!
+initialize
+	Variables := Set new! !
+!V class categoriesFor: #initialize!private! !
+
+"16:13:25, 14 czerwca 2017: Image saved"!
+
+|c v1 v2|
+c := C % 4.
+v1 := V @ 1.
+v2 := V @ 1.
+
+e := v1 = v2.
+Transcript show: e astString.!
+
+|c v1 v2|
+V initialize.
+c := C % 4.
+v1 := V @ 1.
+v2 := V @ 1.
+
+e := v1 = v2.
+Transcript show: e astString.!
+
+!V class methodsFor!
+initialize
+	Variables := Dictionary new! !
+!V class categoriesFor: #initialize!private! !
+
+!V class methodsFor!
+initialize
+	Variables := Dictionary new.! !
+!V class categoriesFor: #initialize!private! !
+
+Transcript show: e astString.!
+
+Transcript show: '2'.!
+
+|c v1 v2|
+V initialize.
+c := C % 4.
+v1 := V @ 1.
+v2 := V @ 1.
+Transcript show: '1'.
+e := v1 = v2.
+Transcript show: '2'.
+
+Transcript show: e astString.!
+
+|c v1 v2|
+V initialize.
+c := C % 4.
+v1 := V @ 1.
+v2 := V @ 1.
+Transcript show: '1'.
+e := v1 = v2.
+Transcript show: '2'.
+
+Transcript show: (e class astString).!
+
+|c v1 v2|
+V initialize.
+c := C % 4.
+v1 := V @ 1.
+v2 := V @ 1.
+Transcript show: '1'.
+e := v1 = v2.
+Transcript show: '2'.
+
+Transcript show: (e class asString).!
+
+Transcript show: (e class printString).!
+
+v2 := V @ 2.!
+
+|c v1 v2|
+V initialize.
+c := C % 4.
+v1 := V @ 1.
+v2 := V @ 2.
+Transcript show: '1'.
+e := v1 = v2.
+Transcript show: '2'.
+
+Transcript show: (e class printString).!
+
+|c v1 v2|
+V initialize.
+c := C % 4.
+v1 := V @ 1.
+v2 := V @ 1.
+Transcript show: '1'.
+e := v1 == v2.
+Transcript show: '2'.
+
+Transcript show: (e class printString).!
+
+|c v1 v2|
+V initialize.
+c := C % 4.
+v1 := V @ 1.
+v2 := V @ (0 + 1).
+Transcript show: '1'.
+e := v1 == v2.
+Transcript show: '2'.
+
+Transcript show: (e class printString).!
+
+(Package manager packageNamed: 'Prolog') comment:
+''!
+|v1 v2 a b c |
+V initialize.
+c := C % 4.
+v1 := V @ 1.
+v2 := V @ (0 + 1).
+Transcript show: '1'.
+e := v1 == v2.
+Transcript show: '2'.
+
+Transcript show: (e class printString).
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].!
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].!
+
+"16:38:21, 14 czerwca 2017: Image saved"!
+
+Term subclass: #V
+	instanceVariableNames: 'name'
+	classVariableNames: 'Variables'
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+Term subclass: #Pair
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+Pair guid: (GUID fromString: '{A2BB9966-EC53-4408-8520-BFA895D8DE5B}')!
+Pair comment: ''!
+!Pair categoriesForClass!Kernel-Objects! !
+!Pair class methodsFor!
+a: aA b: aB
+! !
+!Pair class categoriesFor: #a:b:!public! !
+
+Term subclass: #Pair
+	instanceVariableNames: 'a b'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+!Pair class methodsFor!
+a: aA b: aB
+ ^(self new)
+        a: aA;
+        b: aB;
+        yourself.
+! !
+!Pair class categoriesFor: #a:b:!public! !
+
+!Term methodsFor!
+, aTerm
+	^self subclassResponsibility! !
+!Term categoriesFor: #,!public! !
+
+!C methodsFor!
+, aTerm
+	^Pair a: self b: aTerm! !
+!C categoriesFor: #,!public! !
+
+!Term methodsFor!
+, aTerm
+	^Pair a: self b: aTerm! !
+!Term categoriesFor: #,!public! !
+
+C removeSelector: #, ifAbsent: []!
+
+!C methodsFor!
+% aTerm
+	^Pair a: self b: (C % aTerm)! !
+!C categoriesFor: #%!public! !
+
+!V methodsFor!
+@ aTerm
+	^Pair a: self b: (V @ aTerm)! !
+!V categoriesFor: #@!public! !
+
+Smalltalk at: #L put: (C % nil)!
+
+!Pair methodsFor!
+car
+	^a! !
+!Pair categoriesFor: #car!public! !
+
+!Pair methodsFor!
+cdr
+	^b! !
+!Pair categoriesFor: #cdr!public! !
+
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].!
+
+Term subclass: #C
+	instanceVariableNames: 'a'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+!C class methodsFor!
+% aA
+	 ^(self new)
+        a: aA;
+        yourself.
+! !
+!C class categoriesFor: #%!public! !
+
+!C methodsFor!
+value
+	^a! !
+!C categoriesFor: #value!public! !
+
+!C methodsFor!
+value
+	^a.! !
+!C categoriesFor: #value!public! !
+
+!C methodsFor!
+% aTerm
+	^Pair a: self b: (C % aTerm).! !
+!C categoriesFor: #%!public! !
+
+!Pair methodsFor!
+car
+	^a.! !
+!Pair categoriesFor: #car!public! !
+
+!Pair methodsFor!
+cdr
+	^b.! !
+!Pair categoriesFor: #cdr!public! !
+
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].!
+
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].!
+
+!
+
+!
+
+!
+
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+!
+
+!C methodsFor!
+% aTerm
+	^Pair a: self b: (C % aTerm).! !
+!C categoriesFor: #%!public! !
+
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+!
+
+Smalltalk at: #L put: (C % nil).
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+!
+
+Smalltalk at: #L put: (C % nil).
+t := L % 1, (V @ 2 % 3).!
+
+Smalltalk at: #L put: (C % nil).
+t := L % 1, (V @ 2 % 3).!
+
+Smalltalk at: #L put: (C % nil).!
+
+!C class methodsFor!
+% aA
+	 ^(self new);
+        a: aA;
+        yourself.
+! !
+!C class categoriesFor: #%!public! !
+
+Smalltalk at: #L put: (C % nil).!
+
+!C class methodsFor!
+% aA
+	 ^(self new)
+        initialize: aA;
+        yourself.
+! !
+!C class categoriesFor: #%!public! !
+
+!C methodsFor!
+initialize: aA
+	a := aA.! !
+!C categoriesFor: #initialize:!public! !
+
+!C class methodsFor!
+% aA
+	 ^(self new)
+        initializeA: aA;
+        yourself.
+! !
+!C class categoriesFor: #%!public! !
+
+!C methodsFor!
+initializeA: aA
+	a := aA.! !
+!C categoriesFor: #initializeA:!public! !
+
+C removeSelector: #initialize: ifAbsent: []!
+
+Smalltalk at: #L put: (C % nil).!
+
+Smalltalk at: #L put: (C % nil).
+t := L % 1, (V @ 2 % 3).!
+
+!Pair methodsFor!
+initializeA: aA b: aB
+	a:=aA.
+	b:=aB.
+! !
+!Pair categoriesFor: #initializeA:b:!private! !
+
+!Pair class methodsFor!
+a: aA b: aB
+	^(self new)
+	initializeA: aA B: aB
+        a: aA;
+        b: aB;
+        yourself.
+! !
+!Pair class categoriesFor: #a:b:!public! !
+
+!Pair methodsFor!
+initializeA: aA B: aB
+	a:=aA.
+	b:=aB.
+! !
+!Pair categoriesFor: #initializeA:B:!private! !
+
+Pair removeSelector: #initializeA:b: ifAbsent: []!
+
+!C categoriesFor: #initializeA:!private! !
+
+!Pair class methodsFor!
+a: aA b: aB
+	^(self new)
+	initializeA: aA B: aB;
+        yourself.
+! !
+!Pair class categoriesFor: #a:b:!public! !
+
+Smalltalk at: #L put: (C % nil).
+t := L % 1, (V @ 2 % 3).!
+
+Term subclass: #V
+	instanceVariableNames: 'name value' 
+	classVariableNames: 'Variables'
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+!V methodsFor!
+% aValue
+	value := aValue.! !
+!V categoriesFor: #%!public! !
+
+!V methodsFor!
+value
+	^value.! !
+!V categoriesFor: #value!public! !
+
+Smalltalk at: #L put: (C % nil).!
+
+Smalltalk at: #L put: (C % nil).
+t := L % 1, (V @ 2 % 3).!
+
+Smalltalk at: #L put: (C % nil).
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].!
+
+Smalltalk at: #L put: (C % nil).
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].!
+
+Smalltalk at: #L put: (C % nil).
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].!
+
+Smalltalk at: #L put: (C % nil).
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].!
+
+!Pair methodsFor!
+value
+	^Pair a: (a value) b: (b value).! !
+!Pair categoriesFor: #value!public! !
+
+Smalltalk at: #L put: (C % nil).
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].!
+
+Smalltalk at: #L put: (C % nil).
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].!
+
+Smalltalk at: #L put: (C % nil).
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].!
+
+!Term methodsFor!
+% aTerm
+	^Pair a: self b: (C % aTerm).! !
+!Term categoriesFor: #%!public! !
+
+C removeSelector: #% ifAbsent: []!
+
+V removeSelector: #% ifAbsent: []!
+
+Smalltalk at: #L put: (C % nil).
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].!
+
+Smalltalk at: #L put: (C % nil).
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].!
+
+Smalltalk at: #L put: (C % nil).
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].
+w := 0.
+[t value] on: Error do: [:ex | w := w + 1].
+self assert: [w = 1].
+!
+
+!Term methodsFor!
+@ aTerm
+	^Pair a: self b: (V @ aTerm)! !
+!Term categoriesFor: #@!public! !
+
+V removeSelector: #@ ifAbsent: []!
+
+!Term methodsFor!
+% aName
+	^Pair a: self b: (C % aName).! !
+!Term categoriesFor: #%!public! !
+
+!Term methodsFor!
+@ aName
+	^Pair a: self b: (V @ aName)! !
+!Term categoriesFor: #@!public! !
+
+!Term methodsFor!
+% aValue
+	^Pair a: self b: (C % aValue).! !
+!Term categoriesFor: #%!public! !
+
+Smalltalk at: #L put: (C % nil).
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.!
+
+Smalltalk at: #L put: (C % nil).
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].!
+
+Smalltalk at: #L put: (C % nil).
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].
+w := 0.
+[t value] on: Error do: [:ex | w := w + 1].
+self assert: [w = 1].!
+
+Term subclass: #V
+	instanceVariableNames: 'name undefined value'
+	classVariableNames: 'Variables'
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+!V methodsFor!
+initializeName: aName
+	name := aName.! !
+!V categoriesFor: #initializeName:!public! !
+
+!V methodsFor!
+initializeName: aName
+	name := aName.
+	value := nil.
+	undefined := True.! !
+!V categoriesFor: #initializeName:!public! !
+
+!V class methodsFor!
+new: aName
+	 ^(self new)
+        initializeName: aName ;
+        yourself.! !
+!V class categoriesFor: #new:!public! !
+
+!V methodsFor!
+value
+	undefined 
+		ifTrue: [ (Exception new messageText: 'Variable undefined') signal ] 
+		ifFalse: [^value.]! !
+!V categoriesFor: #value!public! !
+
+Smalltalk at: #L put: (C % nil).
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].
+w := 0.
+[t value] on: Error do: [:ex | w := w + 1].
+self assert: [w = 1].
+!
+
+!C methodsFor!
+unify: aTerm
+	^self = aTerm.! !
+!C categoriesFor: #unify:!public! !
+
+!Pair methodsFor!
+unify: aTerm
+	(aTerm isMemberOf: Pair) 
+		ifTrue: [^(a unify: (aTerm car)) and: (b unify: (aTerm cdr))] 
+		ifFalse: [^false.].! !
+!Pair categoriesFor: #unify:!public! !
+
+!V methodsFor!
+unify: aTerm
+	undefined 
+		ifFalse: [^aTerm unify: value ]
+		ifTrue: [(value = aTerm value) ifTrue: [^true] 
+				ifFalse: [
+				(self = aTerm car) or: (self = aTerm cdr) ifTrue: [^false]
+					ifFalse: [ value := Term value.
+							^true.
+						    ].
+				].
+
+			   ].! !
+!V categoriesFor: #unify:!public! !
+
+!V methodsFor!
+unify: aTerm
+	undefined 
+		ifFalse: [^aTerm unify: value ]
+		ifTrue: [(value = aTerm value) ifTrue: [^true] 
+				ifFalse: [
+				((self = aTerm car) | (self = aTerm cdr))ifTrue: [^false]
+					ifFalse: [ value := Term value.
+							^true.
+						    ].
+				].
+
+			   ].! !
+!V categoriesFor: #unify:!public! !
+
+!V methodsFor!
+unify: aTerm
+	undefined 
+		ifFalse: [^aTerm unify: value ]
+		ifTrue: [(value = aTerm value) ifTrue: [^true] 
+				ifFalse: [
+				((self = aTerm car) | (self = aTerm cdr))ifTrue: [^false]
+					ifFalse: [ value := aTerm value.
+							^true.
+						    ].
+				].
+
+			   ].! !
+!V categoriesFor: #unify:!public! !
+
+!Term methodsFor!
+go: aTerm do: aBlock
+	(self unify: aTerm) ifTrue: [
+		aBlock ]! !
+!Term categoriesFor: #go:do:!public! !
+
+!Term methodsFor!
+unify: aTerm
+	^true.
+! !
+!Term categoriesFor: #unify:!public! !
+
+!Term methodsFor!
+unify: aTerm
+	^self subclassResponsibility.
+! !
+!Term categoriesFor: #unify:!public! !
+
+Smalltalk at: #L put: (C % nil).
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].
+w := 0.
+[t value] on: Error do: [:ex | w := w + 1].
+self assert: [w = 1].
+
+C % 1 go: C % 2 do: [self assert: [false]].
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].!
+
+(Package manager packageNamed: 'Prolog') comment:
+''!
+!Term methodsFor!
+go: aTerm do: aBlock
+	(self unify: aTerm) ifTrue: [
+		Transcript print: 'test'.
+		aBlock. ]! !
+!Term categoriesFor: #go:do:!public! !
+
+C % 1 go: C % 2 do: [self assert: [false]].!
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].!
+
+c1 := C % 1.
+c2 := C % 1.
+
+Transcript print: (c1 unify: c2) asString.
+!
+
+c1 := C % 1.
+c2 := C % 1.
+
+Transcript print: (c1 unify: c2).!
+
+c1 := C % 1.
+c2 := C % 1.
+
+Transcript print: (c1 unify: c2).
+!
+
+c1 := C % 1.
+c2 := C % 1.
+
+Transcript print: (c1 unify: c2) printString .
+!
+
+!C methodsFor!
+unify: aTerm
+	Transcript print: 'Cunify'.
+	^self = aTerm.! !
+!C categoriesFor: #unify:!public! !
+
+c1 := C % 1.
+c2 := C % 1.
+
+Transcript print: (c1 unify: c2) printString .
+!
+
+c1 := C % 1.
+c2 := C % 1.
+
+Transcript print: (c1 unify: c2) printString .
+!
+
+c1 := C % 1.
+c2 := C % 1.
+
+Transcript show: (c1 unify: c2) printString .
+!
+
+!C methodsFor!
+unify: aTerm
+	Transcript show: 'Cunify'.
+	^self = aTerm.! !
+!C categoriesFor: #unify:!public! !
+
+Term subclass: #C
+	instanceVariableNames: 'value'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+!C methodsFor!
+value
+	^value.! !
+!C categoriesFor: #value!public! !
+
+!C methodsFor!
+initializeA: aValue
+	value:= aValue.! !
+!C categoriesFor: #initializeA:!private! !
+
+!C methodsFor!
+initialize: aValue
+	value:= aValue.! !
+!C categoriesFor: #initialize:!private! !
+
+C removeSelector: #initializeA: ifAbsent: []!
+
+!C class methodsFor!
+% aValue
+	 ^(self new)
+        initialize: aValue;
+        yourself.
+! !
+!C class categoriesFor: #%!public! !
+
+!C class methodsFor!
+% aValue
+	 ^(self new)
+        initialize: aValue;
+        yourself.
+! !
+!C class categoriesFor: #%!public! !
+
+!C methodsFor!
+unify: aTerm
+	Transcript show: 'Cunify'.
+	^value = (aTerm value).! !
+!C categoriesFor: #unify:!public! !
+
+C % 1 go: C % 2 do: [self assert: [false]].!
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].!
+
+!C methodsFor!
+unify: aTerm
+	Transcript show: value.
+	Transcript show: ','.
+	Transcript show: aTerm value.
+	^value = (aTerm value).! !
+!C categoriesFor: #unify:!public! !
+
+!C methodsFor!
+unify: aTerm
+	Transcript show: value.
+	Transcript show: ','.
+	Transcript show: (aTerm value).
+	^value = (aTerm value).! !
+!C categoriesFor: #unify:!public! !
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].!
+
+!C methodsFor!
+unify: aTerm
+	Transcript show: (value printString).
+	Transcript show: ','.
+	Transcript show: (aTerm value printString).
+	^value = (aTerm value).! !
+!C categoriesFor: #unify:!public! !
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].!
+
+!C methodsFor!
+unify: aTerm
+	Transcript show: (value printString).
+	Transcript show: ','.
+	Transcript show: (aTerm value printString).
+	^(value = (aTerm value)).! !
+!C categoriesFor: #unify:!public! !
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].!
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].!
+
+c1 := C % 1.
+c2 := C % 1.
+
+Transcript show: (c1 unify: c2) printString .!
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].!
+
+w := 0.
+C % 1 go: C % 1 do: [Transcript show: 'ok'].!
+
+!Term methodsFor!
+go: aTerm do: aBlock
+	(self unify: aTerm) ifTrue: [
+		Transcript print: 'test'.
+		aBlock value. ]! !
+!Term categoriesFor: #go:do:!public! !
+
+w := 0.
+C % 1 go: C % 1 do: [Transcript show: 'ok'].!
+
+!Term methodsFor!
+go: aTerm do: aBlock
+	(self unify: aTerm) ifTrue: [
+		aBlock value. ]! !
+!Term categoriesFor: #go:do:!public! !
+
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].
+w := 0.
+[t value] on: Error do: [:ex | w := w + 1].
+self assert: [w = 1].
+
+C % 1 go: C % 2 do: [self assert: [false]].
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].!
+
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].
+w := 0.
+[t value] on: Error do: [:ex | w := w + 1].
+self assert: [w = 1].
+
+C % 1 go: C % 2 do: [self assert: [false]].
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].!
+
+!V methodsFor!
+initialize: aName
+	name := aName.
+	value := nil.
+	undefined := true.! !
+!V categoriesFor: #initialize:!public! !
+
+V removeSelector: #initializeName: ifAbsent: []!
+
+!V class methodsFor!
+new: aName
+	 ^(self new)
+        initialize: aName ;
+        yourself.! !
+!V class categoriesFor: #new:!public! !
+
+!V methodsFor!
+unify: aTerm
+	(value = aTerm value) 
+		ifTrue: [^true] 
+		ifFalse: [
+			((self = aTerm car) | (self = aTerm cdr))
+			ifTrue: [^false]
+			ifFalse: [ value := aTerm value.
+					undefined := false.
+					^true.
+				].
+			].! !
+!V categoriesFor: #unify:!public! !
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+x % 1 go: (C % 2, y )do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+Transcript show: ((C % 2, y) class printString)
+!
+
+!V methodsFor!
+unify: aTerm
+	(self = aTerm) 
+		ifTrue: [^true] 
+		ifFalse: [
+			((self = aTerm car) | (self = aTerm cdr))
+				ifTrue: [^false]
+				ifFalse: [ value := aTerm value.
+					undefined := false.
+					^true.
+				].
+			].! !
+!V categoriesFor: #unify:!public! !
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+x % 1 go: (C % 2, y )do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+!
+
+!Pair methodsFor!
+unify: aTerm
+	(aTerm isMemberOf: Pair) 
+		ifTrue: [^((a unify: (aTerm car)) and: (b unify: (aTerm cdr)))] 
+		ifFalse: [^false.].! !
+!Pair categoriesFor: #unify:!public! !
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+!
+
+!V methodsFor!
+setValue: aValue
+	value := aValue.
+	undefined := false.! !
+!V categoriesFor: #setValue:!public! !
+
+!V methodsFor!
+unify: aTerm
+	undefined 
+		ifTrue: [
+			(self = aTerm) 
+			ifTrue: [^true] 
+			ifFalse: [
+				((self = aTerm car) | (self = aTerm cdr))
+					ifTrue: [^false]
+					ifFalse: [ value := aTerm value.
+						undefined := false.
+						^true.
+					].
+				].				] 
+		ifFalse: [^ value unify: aTerm].
+
+! !
+!V categoriesFor: #unify:!public! !
+
+!V methodsFor!
+= aV
+	^name = aV name.! !
+!V categoriesFor: #=!public! !
+
+!V methodsFor!
+name
+	^name.! !
+!V categoriesFor: #name!public! !
+
+!V methodsFor!
+unify: aTerm
+	undefined 
+		ifTrue: [
+			(self = aTerm) 
+			ifTrue: [^true] 
+			ifFalse: [ 
+				((self = aTerm car) | (self = aTerm cdr))
+					ifTrue: [^false]
+					ifFalse: [ value := aTerm value.
+						undefined := false.
+						^true.
+					].
+				].				] 
+		ifFalse: [^ value unify: aTerm].
+
+! !
+!V categoriesFor: #unify:!public! !
+
+!V methodsFor!
+unify: aTerm
+	undefined 
+		ifTrue: [
+			(self = aTerm) 
+			ifTrue: [^true] 
+			ifFalse: [ (aTerm isMemberOf: C) 
+				ifTrue: [self setValue aTerm.
+					   ^true] 
+				ifFalse: [^false].
+				].				] 
+		ifFalse: [^value unify: aTerm].
+
+! !
+!V categoriesFor: #unify:!public! !
+
+!V methodsFor!
+setValue: aValue
+	value := aValue.
+	undefined := false.! !
+!V categoriesFor: #setValue:!public! !
+
+!C methodsFor!
+unify: aTerm
+	(aTerm isMemberOf: C) 
+		ifTrue: [^(value = (aTerm value))] 
+		ifFalse: [(aTerm isMemberOf: V) 
+			ifTrue: [aTerm setValue: self.
+				   ^true] 
+			ifFalse: [^false]
+]
+	! !
+!C categoriesFor: #unify:!public! !
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+!V class methodsFor!
+@ aName
+	| exists var | 
+	exists := Variables includesKey: aName.
+	exists 
+		ifTrue: [^Variables at: aName] 
+		ifFalse: [var := V new.
+				Variables add: aName -> var.
+				^var. 
+				]! !
+!V class categoriesFor: #@!public! !
+
+!V class methodsFor!
+@ aName
+	| exists var | 
+	exists := Variables includesKey: aName.
+	exists 
+		ifTrue: [^Variables at: aName] 
+		ifFalse: [var := self new initialize.
+				Variables add: aName -> var.
+				^var. 
+				]! !
+!V class categoriesFor: #@!public! !
+
+!V class methodsFor!
+@ aName
+	| exists var | 
+	exists := Variables includesKey: aName.
+	exists 
+		ifTrue: [^Variables at: aName] 
+		ifFalse: [var := self new initialize aName.
+				Variables add: aName -> var.
+				^var. 
+				]! !
+!V class categoriesFor: #@!public! !
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+!V class methodsFor!
+@ aName
+	| exists var | 
+	exists := Variables includesKey: aName.
+	exists 
+		ifTrue: [^Variables at: aName] 
+		ifFalse: [var := self new initialize: aName.
+				Variables add: aName -> var.
+				^var. 
+				]! !
+!V class categoriesFor: #@!public! !
+
+!V class methodsFor!
+@ aName
+	| exists var | 
+	exists := Variables includesKey: aName.
+	exists 
+		ifTrue: [^Variables at: aName] 
+		ifFalse: [var := self new initialize: aName.
+				Variables add: aName -> var.
+				^var. 
+				]! !
+!V class categoriesFor: #@!public! !
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+!V class methodsFor!
+@ aName
+	| exists var | 
+	exists := Variables includesKey: aName.
+	exists 
+		ifTrue: [^Variables at: aName] 
+		ifFalse: [var := self new: aName.
+				Variables add: aName -> var.
+				^var. 
+				]! !
+!V class categoriesFor: #@!public! !
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+V class removeSelector: #new: ifAbsent: []!
+
+!V class methodsFor!
+@ aName
+	| exists var | 
+	exists := Variables includesKey: aName.
+	exists 
+		ifTrue: [^Variables at: aName] 
+		ifFalse: [var := (self new) initialize: aName.
+				Variables add: aName -> var.
+				^var. 
+				]! !
+!V class categoriesFor: #@!public! !
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+!V class methodsFor!
+@ aName
+	| exists var | 
+	exists := Variables includesKey: aName.
+	exists 
+		ifTrue: [^Variables at: aName] 
+		ifFalse: [var := (super new) initialize: aName.
+				Variables add: aName -> var.
+				^var. 
+				]! !
+!V class categoriesFor: #@!public! !
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+!V methodsFor!
+initialize: aName
+	name := aName.
+	value := nil.
+	undefined := true.
+Transcript show: 'V init'.! !
+!V categoriesFor: #initialize:!public! !
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+!
+
+x := V @ #x.
+y := V @ #y.!
+
+!V class methodsFor!
+@ aName
+	| exists var | 
+	exists := Variables includesKey: aName.
+	exists 
+		ifTrue: [^Variables at: aName] 
+		ifFalse: [var := (self new) initialize: aName.
+				Variables add: aName -> var.
+				^var. 
+				]! !
+!V class categoriesFor: #@!public! !
+
+x := V @ #x.
+y := V @ #y.!
+
+x := V @ #x.
+y := V @ #y.!
+
+x := V @ #x.
+y := V @ #y.!
+
+V initialize.
+x := V @ #x.
+y := V @ #y.!
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+!V methodsFor!
+= aV
+	(aV isMemberOf: V)
+		ifTrue: [^name = aV name.] 
+		ifFalse: [^false.]
+! !
+!V categoriesFor: #=!public! !
+
+!V methodsFor!
+= aTerm
+	(aTerm isMemberOf: V)
+		ifTrue: [^name = aTerm name.] 
+		ifFalse: [^false.]
+! !
+!V categoriesFor: #=!public! !
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+!V methodsFor!
+unify: aTerm
+	undefined 
+		ifTrue: [
+			(self = aTerm) 
+			ifTrue: [^true] 
+			ifFalse: [ (aTerm isMemberOf: C) 
+				ifTrue: [self setValue: aTerm.
+					   ^true] 
+				ifFalse: [^false].
+				].				] 
+		ifFalse: [^value unify: aTerm].
+
+! !
+!V categoriesFor: #unify:!public! !
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+!Pair methodsFor!
+unify: aTerm
+	(aTerm isMemberOf: Pair) 
+		ifTrue: [^((a unify: (aTerm car)) and: [b unify: (aTerm cdr)])] 
+		ifFalse: [^false.].! !
+!Pair categoriesFor: #unify:!public! !
+
+!Pair methodsFor!
+unify: aTerm
+	(aTerm isMemberOf: Pair) 
+		ifTrue: [^((a unify: (aTerm car)) & (b unify: (aTerm cdr)))] 
+		ifFalse: [^false.].! !
+!Pair categoriesFor: #unify:!public! !
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+!V methodsFor!
+setValue: aValue
+	value := aValue.
+	undefined := false.
+Transcript show: name.
+Transcript show: ','.
+Transcript show: aValue.! !
+!V categoriesFor: #setValue:!public! !
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+!V methodsFor!
+setValue: aValue
+	value := aValue.
+	undefined := false.
+Transcript show: name.
+Transcript show: ','.
+Transcript show: (aValue value printString).! !
+!V categoriesFor: #setValue:!public! !
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+Transcript show: (x value class printString).
+    self assert: [x value = 2].
+Transcript show: (y value class printString).
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+Transcript show: (x value value class printString).
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+!C methodsFor!
+= aValue
+	^value = aValue! !
+!C categoriesFor: #=!public! !
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+Transcript show: (x value value class printString).
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+!V methodsFor!
+unify: aTerm
+	undefined 
+		ifTrue: [
+			(self = aTerm) 
+			ifTrue: [^true] 
+			ifFalse: [ (aTerm isMemberOf: C) 
+				ifTrue: [self setValue: aTerm.
+					   ^true] 
+				ifFalse: [(aTerm isMemberOf: Pair)
+					ifTrue: [self setValue: aTerm. "!!!!!!check if v does not exist in pair"
+						^true ] 
+					ifFalse: [^false]
+					]
+				]
+			] 
+		ifFalse: [^value unify: aTerm].
+
+! !
+!V categoriesFor: #unify:!public! !
+
+!Pair methodsFor!
+unify: aTerm
+	(aTerm isMemberOf: Pair) 
+		ifTrue: [^((a unify: (aTerm car)) & (b unify: (aTerm cdr)))] 
+		ifFalse: [(aTerm isMemberOf: V )
+			ifTrue: [^aTerm unify: self] ifFalse: [^false]
+		
+		].! !
+!Pair categoriesFor: #unify:!public! !
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].!
+
+!V methodsFor!
+initialize: aName
+	name := aName.
+	value := nil.
+	undefined := true.! !
+!V categoriesFor: #initialize:!public! !
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].!
+
+!V methodsFor!
+car
+	^value car! !
+!V categoriesFor: #car!public! !
+
+!V methodsFor!
+car
+	^value car.! !
+!V categoriesFor: #car!public! !
+
+!V methodsFor!
+cdr
+	^value cdr.! !
+!V categoriesFor: #cdr!public! !
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].!
+
+!V methodsFor!
+setUndefined
+	value := nil.
+	undefined := true.
+! !
+!V categoriesFor: #setUndefined!public! !
+
+!Term methodsFor!
+go: aTerm do: aBlock
+	(self unify: aTerm) ifTrue: [
+		aBlock value. 
+	
+]! !
+!Term categoriesFor: #go:do:!public! !
+
+!Term methodsFor!
+isC
+	^false.! !
+!Term categoriesFor: #isC!public! !
+
+!Term methodsFor!
+isV
+	^false.! !
+!Term categoriesFor: #isV!public! !
+
+!Term methodsFor!
+isPair
+	^false.! !
+!Term categoriesFor: #isPair!public! !
+
+!C methodsFor!
+isC
+	^True.! !
+!C categoriesFor: #isC!public! !
+
+!V methodsFor!
+isV
+	^True.! !
+!V categoriesFor: #isV!public! !
+
+!Pair methodsFor!
+isPair
+	^true.! !
+!Pair categoriesFor: #isPair!public! !
+
+!Term methodsFor!
+go: aTerm do: aBlock
+	(self unify: aTerm) ifTrue: [
+		aBlock value. 
+	self isV ifTrue: [self setUndefined].
+	aTerm isV ifTrue: [aTerm setUndefined].
+]! !
+!Term categoriesFor: #go:do:!public! !
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].!
+
+!V methodsFor!
+isV
+	^true.! !
+!V categoriesFor: #isV!public! !
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+w := 0.
+
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].!
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+w := 0.
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].
+
+w := 0.
+x go: C % $a do:
+    [w := w + 1.
+    x go: C % $b do: [self assert: [false]]].
+x go: C % $b do: [w := w + 1].
+self assert: [w = 2].!
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+w := 0.
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+w := 0.
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].!
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].!
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+
+w := 0.
+x go: C % $a do:
+    [w := w + 1.
+    x go: C % $b do: [self assert: [false]]].
+x go: C % $b do: [w := w + 1].
+self assert: [w = 2].!
+
+V initialize.
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].
+w := 0.
+[t value] on: Error do: [:ex | w := w + 1].
+self assert: [w = 1].
+
+C % 1 go: C % 2 do: [self assert: [false]].
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].
+
+w := 0.
+x go: C % $a do:
+    [w := w + 1.
+    x go: C % $b do: [self assert: [false]]].
+x go: C % $b do: [w := w + 1].
+self assert: [w = 2].
+
+w := 0.
+x % 1 go: y, y do:
+    [w := w + 1.
+    self assert: [x value = 1].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+V initialize.
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].
+w := 0.
+[t value] on: Error do: [:ex | w := w + 1].
+self assert: [w = 1].!
+
+V initialize.
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].
+w := 0.
+[t value] on: Error do: [:ex | w := w + 1].
+self assert: [w = 1].
+
+C % 1 go: C % 2 do: [self assert: [false]].
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].!
+
+V initialize.
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].
+w := 0.
+[t value] on: Error do: [:ex | w := w + 1].
+self assert: [w = 1].
+
+C % 1 go: C % 2 do: [self assert: [false]].
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].
+!
+
+!Pair methodsFor!
+unify: aTerm
+	(aTerm isPair) 
+		ifTrue: [^((a unify: (aTerm car)) & (b unify: (aTerm cdr)))] 
+		ifFalse: [(aTerm isV )
+			ifTrue: [^aTerm unify: self] 
+			ifFalse: [^false]
+		].! !
+!Pair categoriesFor: #unify:!public! !
+
+V initialize.
+
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].
+!
+
+!V methodsFor!
+unify: aTerm
+	undefined 
+		ifTrue: [ Transcript show: 'variable undefined, '.
+			(self = aTerm) 
+			ifTrue: [^true] 
+			ifFalse: [ (aTerm isMemberOf: C) 
+				ifTrue: [self setValue: aTerm. 
+					   ^true] 
+				ifFalse: [(aTerm isMemberOf: Pair)
+					ifTrue: [self setValue: aTerm. "!!!!!!check if v does not exist in pair"
+						^true ] 
+					ifFalse: [^false]
+					]
+				]
+			] 
+		ifFalse: [^value unify: aTerm].
+
+! !
+!V categoriesFor: #unify:!public! !
+
+V initialize.
+
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].!
+
+!Pair methodsFor!
+unify: aTerm
+	(aTerm isPair) 
+		ifTrue: [^((a unify: (aTerm car)) & (b unify: (aTerm cdr)))] 
+		ifFalse: [(aTerm isV )
+			ifTrue: [^(aTerm unify: self)] 
+			ifFalse: [^false]
+		].! !
+!Pair categoriesFor: #unify:!public! !
+
+V initialize.
+
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].!
+
+!Pair methodsFor!
+unify: aTerm
+	(aTerm isPair) 
+		ifTrue: [^((a unify: (aTerm car)) & (b unify: (aTerm cdr)))] 
+		ifFalse: [(aTerm isV )
+			ifTrue: [Transcript show: 'symetric pair->v, '.
+			^aTerm unify: self] 
+			ifFalse: [^false]
+		].! !
+!Pair categoriesFor: #unify:!public! !
+
+V initialize.
+
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].!
+
+!V methodsFor!
+unify: aTerm
+	undefined 
+		ifTrue: [ Transcript show: 'variable undefined, '.
+			(self = aTerm) 
+			ifTrue: [^true] 
+			ifFalse: [ (aTerm isMemberOf: C) 
+				ifTrue: [self setValue: aTerm. 
+					   ^true] 
+				ifFalse: [(aTerm isMemberOf: Pair)
+					ifTrue: [self setValue: aTerm. "!!!!!!check if v does not exist in pair"
+						^true ] 
+					ifFalse: [^false]
+					]
+				]
+			] 
+		ifFalse: [^value unify: aTerm].
+
+! !
+!V categoriesFor: #unify:!public! !
+
+V initialize.
+
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].
+!
+
+!V methodsFor!
+unify: aTerm
+	undefined 
+		ifTrue: [ Transcript show: 'variable undefined, '.
+			(self = aTerm) 
+			ifTrue: [^true] 
+			ifFalse: [ (aTerm isMemberOf: C) 
+				ifTrue: [self setValue: aTerm. 
+					   ^true] 
+				ifFalse: [(aTerm isMemberOf: Pair)
+					ifTrue: [self setValue: aTerm. "!!!!!!check if v does not exist in pair"
+						^true ] 
+					ifFalse: [^false]
+					]
+				]
+			] 
+		ifFalse: [  Transcript show: 'variable defined, '.
+		^value unify: aTerm].
+
+! !
+!V categoriesFor: #unify:!public! !
+
+V initialize.
+
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].
+!
+
+V initialize.
+
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].!
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].!
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].
+
+w := 0.
+x go: C % $a do:
+    [w := w + 1.
+    x go: C % $b do: [self assert: [false]]].
+x go: C % $b do: [w := w + 1].
+self assert: [w = 2].!
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+
+w := 0.
+x % 1 go: y, y do:
+    [w := w + 1.
+    self assert: [x value = 1].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+
+w := 0.
+x % 1 go: y, y do:
+    [w := w + 1.
+    self assert: [x value = 1].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+
+w := 0.
+x % 1 go: y, y do:
+    [w := w + 1.
+    self assert: [x value = 1].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+!V methodsFor!
+unify: aTerm
+	undefined 
+		ifTrue: [ Transcript show: 'variable undefined, '.
+			aTerm isC ifTrue: [self setValue: aTerm. 
+					   ^true].
+			aTerm isPair ifTrue: [self setValue: aTerm. "!!!!!!check if v does not exist in pair"
+					  ^true ].
+			aTerm isV ifTrue: [(self = aTerm) 
+							ifTrue: [^true]
+							ifFalse: [self setValue: aTerm. ^true.].
+					  ^true ].
+		]
+		ifFalse: [  Transcript show: 'variable defined, '.
+		^value unify: aTerm].
+
+! !
+!V categoriesFor: #unify:!public! !
+
+!Pair methodsFor!
+unify: aTerm
+	(aTerm isPair) 
+		ifTrue: [Transcript show: 'inify pair, '.
+			^((a unify: (aTerm car)) & (b unify: (aTerm cdr)))] 
+		ifFalse: [(aTerm isV )
+			ifTrue: [Transcript show: 'symetric pair->v, '.
+			^aTerm unify: self] 
+			ifFalse: [^false]
+		].! !
+!Pair categoriesFor: #unify:!public! !
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+
+w := 0.
+x % 1 go: y, y do:
+    [w := w + 1.
+    self assert: [x value = 1].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+!Pair methodsFor!
+unify: aTerm
+	(aTerm isPair) 
+		ifTrue: [Transcript show: 'unify pair, '.
+			^((a unify: (aTerm car)) & (b unify: (aTerm cdr)))] 
+		ifFalse: [(aTerm isV )
+			ifTrue: [Transcript show: 'symetric pair->v, '.
+			^aTerm unify: self] 
+			ifFalse: [^false]
+		].! !
+!Pair categoriesFor: #unify:!public! !
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+
+w := 0.
+x % 1 go: y, y do:
+    [w := w + 1.
+    self assert: [x value = 1].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+!V methodsFor!
+setValue: aValue
+	value := aValue.
+	undefined := false.
+Transcript show: 'set varialbe '.
+Transcript show: name.
+! !
+!V categoriesFor: #setValue:!public! !
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+
+w := 0.
+x % 1 go: y, y do:
+    [w := w + 1.
+    self assert: [x value = 1].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+!V methodsFor!
+value
+	undefined 
+		ifTrue: [ (Exception new messageText: 'Variable undefined') signal ] 
+		ifFalse: [value isV ifTrue: [^value value] ifFalse: [^value]]! !
+!V categoriesFor: #value!public! !
+
+!V methodsFor!
+value
+	undefined 
+		ifTrue: [ (Exception new messageText: 'Variable undefined') signal ] 
+		ifFalse: [value isV ifTrue: [^value value] ifFalse: [^value]]! !
+!V categoriesFor: #value!public! !
+
+V initialize.
+x := V @ #x.
+y := V @ #y.
+
+w := 0.
+x % 1 go: y, y do:
+    [w := w + 1.
+    self assert: [x value = 1].
+    self assert: [y value = 1]].
+self assert: [w = 1].!
+
+V initialize.
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].
+w := 0.
+[t value] on: Error do: [:ex | w := w + 1].
+self assert: [w = 1].
+
+C % 1 go: C % 2 do: [self assert: [false]].
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].
+
+w := 0.
+x go: C % $a do:
+    [w := w + 1.
+    x go: C % $b do: [self assert: [false]]].
+x go: C % $b do: [w := w + 1].
+self assert: [w = 2].
+
+w := 0.
+x % 1 go: y, y do:
+    [w := w + 1.
+    self assert: [x value = 1].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+
+x go: L, x do: [self assert: [false]].!
+
+!C methodsFor!
+isC
+	^true.! !
+!C categoriesFor: #isC!public! !
+
+V initialize.
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].
+w := 0.
+[t value] on: Error do: [:ex | w := w + 1].
+self assert: [w = 1].
+
+C % 1 go: C % 2 do: [self assert: [false]].
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].
+
+w := 0.
+x go: C % $a do:
+    [w := w + 1.
+    x go: C % $b do: [self assert: [false]]].
+x go: C % $b do: [w := w + 1].
+self assert: [w = 2].
+
+w := 0.
+x % 1 go: y, y do:
+    [w := w + 1.
+    self assert: [x value = 1].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+
+x go: L, x do: [self assert: [false]].!
+
+V initialize.
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].
+w := 0.
+[t value] on: Error do: [:ex | w := w + 1].
+self assert: [w = 1].
+
+C % 1 go: C % 2 do: [self assert: [false]].
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+"
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].
+"
+w := 0.
+x go: C % $a do:
+    [w := w + 1.
+    x go: C % $b do: [self assert: [false]]].
+x go: C % $b do: [w := w + 1].
+self assert: [w = 2].
+
+w := 0.
+x % 1 go: y, y do:
+    [w := w + 1.
+    self assert: [x value = 1].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+
+x go: L, x do: [self assert: [false]].!
+
+V initialize.
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].
+w := 0.
+[t value] on: Error do: [:ex | w := w + 1].
+self assert: [w = 1].
+
+C % 1 go: C % 2 do: [self assert: [false]].
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+"
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].
+"
+"w := 0.
+x go: C % $a do:
+    [w := w + 1.
+    x go: C % $b do: [self assert: [false]]].
+x go: C % $b do: [w := w + 1].
+self assert: [w = 2]."
+
+w := 0.
+x % 1 go: y, y do:
+    [w := w + 1.
+    self assert: [x value = 1].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+
+x go: L, x do: [self assert: [false]].!
+
+V initialize.
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].
+w := 0.
+[t value] on: Error do: [:ex | w := w + 1].
+self assert: [w = 1].
+
+C % 1 go: C % 2 do: [self assert: [false]].
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+"
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].
+"
+"w := 0.
+x go: C % $a do:
+    [w := w + 1.
+    x go: C % $b do: [self assert: [false]]].
+x go: C % $b do: [w := w + 1].
+self assert: [w = 2]."
+"
+w := 0.
+x % 1 go: y, y do:
+    [w := w + 1.
+    self assert: [x value = 1].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+"
+x go: L, x do: [self assert: [false]].!
+
+V initialize.
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].
+w := 0.
+[t value] on: Error do: [:ex | w := w + 1].
+self assert: [w = 1].
+
+C % 1 go: C % 2 do: [self assert: [false]].
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+Transcript show: 'XXXXXXXXX'.
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].
+
+"w := 0.
+x go: C % $a do:
+    [w := w + 1.
+    x go: C % $b do: [self assert: [false]]].
+x go: C % $b do: [w := w + 1].
+self assert: [w = 2].
+
+w := 0.
+x % 1 go: y, y do:
+    [w := w + 1.
+    self assert: [x value = 1].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+"
+x go: L, x do: [self assert: [false]].!
+
+!C methodsFor!
+setUndefined! !
+!C categoriesFor: #setUndefined!public! !
+
+!Pair methodsFor!
+setUndefined
+	a setUndefined.
+	b setUndefined.! !
+!Pair categoriesFor: #setUndefined!public! !
+
+!Term methodsFor!
+setUndefined
+	^self subclassResponsibility.! !
+!Term categoriesFor: #setUndefined!public! !
+
+!Term methodsFor!
+setUndefined
+	^self subclassResponsibility! !
+!Term categoriesFor: #setUndefined!public! !
+
+!Term methodsFor!
+go: aTerm do: aBlock
+	(self unify: aTerm) ifTrue: [
+		aBlock value. 
+	self setUndefined.
+	aTerm setUndefined.
+]! !
+!Term categoriesFor: #go:do:!public! !
+
+V initialize.
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].
+w := 0.
+[t value] on: Error do: [:ex | w := w + 1].
+self assert: [w = 1].
+
+C % 1 go: C % 2 do: [self assert: [false]].
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+Transcript show: 'XXXXXXXXX'.
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].
+
+"w := 0.
+x go: C % $a do:
+    [w := w + 1.
+    x go: C % $b do: [self assert: [false]]].
+x go: C % $b do: [w := w + 1].
+self assert: [w = 2].
+
+w := 0.
+x % 1 go: y, y do:
+    [w := w + 1.
+    self assert: [x value = 1].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+"
+x go: L, x do: [self assert: [false]].!
+
+V initialize.
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].
+w := 0.
+[t value] on: Error do: [:ex | w := w + 1].
+self assert: [w = 1].
+
+C % 1 go: C % 2 do: [self assert: [false]].
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+Transcript show: 'XXXXXXXXX'.
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].
+
+"w := 0.
+x go: C % $a do:
+    [w := w + 1.
+    x go: C % $b do: [self assert: [false]]].
+x go: C % $b do: [w := w + 1].
+self assert: [w = 2].
+
+w := 0.
+x % 1 go: y, y do:
+    [w := w + 1.
+    self assert: [x value = 1].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+"
+x go: L, x do: [self assert: [false]].!
+
+V initialize.
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].
+w := 0.
+[t value] on: Error do: [:ex | w := w + 1].
+self assert: [w = 1].
+
+C % 1 go: C % 2 do: [self assert: [false]].
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+Transcript show: 'XXXXXXXXX'.
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].
+
+w := 0.
+x go: C % $a do:
+    [w := w + 1.
+    x go: C % $b do: [self assert: [false]]].
+x go: C % $b do: [w := w + 1].
+self assert: [w = 2].
+"
+w := 0.
+x % 1 go: y, y do:
+    [w := w + 1.
+    self assert: [x value = 1].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+"
+x go: L, x do: [self assert: [false]].!
+
+V initialize.
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].
+w := 0.
+[t value] on: Error do: [:ex | w := w + 1].
+self assert: [w = 1].
+
+C % 1 go: C % 2 do: [self assert: [false]].
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+Transcript show: 'XXXXXXXXX'.
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].
+
+w := 0.
+x go: C % $a do:
+    [w := w + 1.
+    x go: C % $b do: [self assert: [false]]].
+x go: C % $b do: [w := w + 1].
+self assert: [w = 2].
+
+w := 0.
+x % 1 go: y, y do:
+    [w := w + 1.
+    self assert: [x value = 1].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+
+"x go: L, x do: [self assert: [false]]."!
+
+V initialize.
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].
+w := 0.
+[t value] on: Error do: [:ex | w := w + 1].
+self assert: [w = 1].
+
+C % 1 go: C % 2 do: [self assert: [false]].
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+Transcript show: 'XXXXXXXXX'.
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].
+
+w := 0.
+x go: C % $a do:
+    [w := w + 1.
+    x go: C % $b do: [self assert: [false]]].
+x go: C % $b do: [w := w + 1].
+self assert: [w = 2].
+
+w := 0.
+x % 1 go: y, y do:
+    [w := w + 1.
+    self assert: [x value = 1].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+
+x go: L, x do: [self assert: [false]].!
+
+V initialize.
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].
+w := 0.
+[t value] on: Error do: [:ex | w := w + 1].
+self assert: [w = 1].
+
+C % 1 go: C % 2 do: [self assert: [false]].
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].
+
+x := V @ #x.
+y := V @ #y.
+"w := 0.
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].
+
+w := 0.
+x go: C % $a do:
+    [w := w + 1.
+    x go: C % $b do: [self assert: [false]]].
+x go: C % $b do: [w := w + 1].
+self assert: [w = 2].
+
+w := 0.
+x % 1 go: y, y do:
+    [w := w + 1.
+    self assert: [x value = 1].
+    self assert: [y value = 1]].
+self assert: [w = 1]."
+
+x go: L, x do: [self assert: [false]].!
+
+V initialize.
+
+x := V @ #x.
+
+x go: L, x do: [self assert: [false]].!
+
+!C methodsFor!
+unify: aTerm
+	(aTerm isC)  ifTrue: [^(value = (aTerm value))].
+	(aTerm isV)  ifTrue: [^aTerm unify: self].
+	^false.
+! !
+!C categoriesFor: #unify:!public! !
+
+!V methodsFor!
+unify: aTerm
+	undefined 
+		ifTrue: [ Transcript show: 'variable undefined, '.
+			aTerm isC ifTrue: [self setValue: aTerm. 
+					   ^true].
+			aTerm isPair ifTrue: [((self = aTerm car) | (self = aTerm cdr)) 
+							ifTrue: [^false] 
+							ifFalse: [self setValue: aTerm. ^true.]
+							].
+			aTerm isV ifTrue: [(self = aTerm) 
+							ifFalse: [self setValue: aTerm].
+							^true
+					          ].
+		]
+		ifFalse: [  Transcript show: 'variable defined, '.
+		^value unify: aTerm].
+
+! !
+!V categoriesFor: #unify:!public! !
+
+!V methodsFor!
+unify: aTerm
+	undefined 
+		ifTrue: [ Transcript show: 'variable undefined, '.
+			aTerm isC ifTrue: [self setValue: aTerm. 
+					   ^true].
+			aTerm isPair ifTrue: [((self = aTerm car) | (self = aTerm cdr)) 
+							ifTrue: [^false] 
+							ifFalse: [self setValue: aTerm. ^true.]
+							].
+			aTerm isV ifTrue: [(self = aTerm) 
+							ifFalse: [self setValue: aTerm].
+							^true
+					          ].
+		]
+		ifFalse: [  Transcript show: 'variable defined, '.
+		^value unify: aTerm].
+
+! !
+!V categoriesFor: #unify:!public! !
+
+V initialize.
+
+x := V @ #x.
+
+x go: L, x do: [self assert: [false]].!
+
+V initialize.
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].
+w := 0.
+[t value] on: Error do: [:ex | w := w + 1].
+self assert: [w = 1].
+
+C % 1 go: C % 2 do: [self assert: [false]].
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].
+
+w := 0.
+x go: C % $a do:
+    [w := w + 1.
+    x go: C % $b do: [self assert: [false]]].
+x go: C % $b do: [w := w + 1].
+self assert: [w = 2].
+
+w := 0.
+x % 1 go: y, y do:
+    [w := w + 1.
+    self assert: [x value = 1].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+
+x go: L, x do: [self assert: [false]].!
+
+!V methodsFor!
+unify: aTerm
+	undefined 
+		ifTrue: [ Transcript show: 'variable undefined, '.
+			aTerm isC ifTrue: [self setValue: aTerm. 
+					   ^true].
+			aTerm isPair ifTrue: [((self = aTerm car) | (self = aTerm cdr)) 
+							ifTrue: [^false] 
+							ifFalse: [self setValue: aTerm. ^true.]
+							].
+			aTerm isV ifTrue: [(self = aTerm) 
+							ifFalse: [self setValue: aTerm].
+							^true
+					          ].
+		]
+		ifFalse: [  Transcript show: 'variable defined, '.
+		^value unify: aTerm].
+
+! !
+!V categoriesFor: #unify:!public! !
+
+!C class methodsFor!
+% aValue
+	 ^(self new) initialize: aValue;
+        yourself.
+! !
+!C class categoriesFor: #%!public! !
+
+"14:48:39, 16 czerwca 2017: Image saved"!
+
+"19:39:37, 18 czerwca 2017: Image saved"!
+
+"19:39:47, 18 czerwca 2017: Image saved"!
+
