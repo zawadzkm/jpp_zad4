@@ -3379,3 +3379,1682 @@ unify: aTerm
 
 "19:39:47, 18 czerwca 2017: Image saved"!
 
+"22:54:09, 19 czerwca 2017: Dolphin Smalltalk Professional started"!
+
+"22:54:46, 19 czerwca 2017: Image saved"!
+
+"14:08:23, 20 czerwca 2017: Dolphin Smalltalk Professional started"!
+
+Object subclass: #Prolog
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+Prolog guid: (GUID fromString: '{A9689B63-C26A-4F0D-8A54-AF275A3165D7}')!
+Prolog comment: ''!
+!Prolog categoriesForClass!Kernel-Objects! !
+Object subclass: #Prolog
+	instanceVariableNames: 'facts'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+!Prolog methodsFor!
+initialize
+	facts = Array new.! !
+!Prolog categoriesFor: #initialize!public! !
+
+!Prolog methodsFor!
+initialize
+	facts = Bag new.! !
+!Prolog categoriesFor: #initialize!public! !
+
+!Prolog methodsFor!
+fact: aFact
+	facts add: aFact.! !
+!Prolog categoriesFor: #fact:!public! !
+
+!Prolog methodsFor!
+go: aClause do: aBlock
+	^1.! !
+!Prolog categoriesFor: #go:do:!public! !
+
+LinkedList subclass: #Query
+	instanceVariableNames: ''
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+Query guid: (GUID fromString: '{15B3D689-817D-4C66-8C19-3145733B50AC}')!
+Query comment: ''!
+!Query categoriesForClass!Collections-Sequenceable! !
+LinkedList subclass: #Query
+	instanceVariableNames: 'list'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+!Query methodsFor!
+initialize
+	list = OrderedCollection new.! !
+!Query categoriesFor: #initialize!public! !
+
+!Term methodsFor!
+& aQ
+	! !
+!Term categoriesFor: #&!public! !
+
+!Term methodsFor!
+& aQ
+	^(Query new) merge: aQ asQuery.! !
+!Term categoriesFor: #&!public! !
+
+!Term methodsFor!
+& aQ
+	^(Query new) merge: (aQ asQuery).! !
+!Term categoriesFor: #&!public! !
+
+Object subclass: #Query
+	instanceVariableNames: 'list'
+	classVariableNames: ''
+	poolDictionaries: ''
+	classInstanceVariableNames: ''!
+
+!Query methodsFor!
+asQuery
+	^self.! !
+!Query categoriesFor: #asQuery!public! !
+
+!Query class methodsFor!
+with: aQ
+	^(self new)
+		merge aQ;
+		yourself! !
+!Query class categoriesFor: #with:!public! !
+
+!Query class methodsFor!
+with: aQ
+	^(self new)
+		add:  aQ;
+		yourself! !
+!Query class categoriesFor: #with:!public! !
+
+!Query methodsFor!
+add: aQ
+	list add: aQ! !
+!Query categoriesFor: #add:!public! !
+
+!Term methodsFor!
+asQuery
+	^(Query with: self)! !
+!Term categoriesFor: #asQuery!public! !
+
+!Term methodsFor!
+& aQ
+	^(self asQuery) merge: (aQ asQuery)! !
+!Term categoriesFor: #&!public! !
+
+!Term methodsFor!
+& aQ
+	^(self asQuery) & (aQ asQuery)! !
+!Term categoriesFor: #&!public! !
+
+!Query methodsFor!
+asList
+	^list.! !
+!Query categoriesFor: #asList!public! !
+
+!Query methodsFor!
+& aQ
+	"list (aQ asList)."! !
+!Query categoriesFor: #&!public! !
+
+!Query methodsFor!
+& aQ
+	list addAllLast: (aQ asList).! !
+!Query categoriesFor: #&!public! !
+
+| q1 q2 q3 |!
+
+!Query methodsFor!
+length
+	^list length.! !
+!Query categoriesFor: #length!public! !
+
+| q1 q2 q3 |
+q1 = C % 1
+q2 = q1 & (C % 2)
+q3 = q2 & (C % 3)
+Transcript show: (q3 length printString)!
+
+| q1 q2 q3 |
+q1 = C % 1.
+q2 = q1 & (C % 2).
+q3 = q2 & (C % 3).
+Transcript show: (q3 length printString).!
+
+| q1 q2 q3 |
+q1 = (C % 1).
+q2 = q1 & (C % 2).
+q3 = q2 & (C % 3).
+Transcript show: (q3 length printString).!
+
+| q1 q2 q3 |
+q1 = (C % 1).
+Transcript show: (q1 class printString).
+q2 = q1 & (C % 2).
+q3 = q2 & (C % 3).
+Transcript show: (q3 length printString).!
+
+| q1 q2 q3 |
+q1 = C % 1.
+Transcript show: (q1 class printString).!
+
+| q1 q2 q3 |
+q1 = C % 1.!
+
+| q1 q2 q3 |
+q1 = C % 1.
+!
+
+!C class methodsFor!
+% aValue
+	Transcript show: 'C % method'.
+	 ^(self new) initialize: aValue;
+        yourself.
+! !
+!C class categoriesFor: #%!public! !
+
+| q1 q2 q3 |
+q1 = C % 1.!
+
+| q1 q2 q3 |
+q1 = C % 1.!
+
+| q q2 q3 |
+q = C % 1.!
+
+| q1 q2 q3 |
+"q = C % 1."
+Transcript show: (q1 class printString).!
+
+| q1 q2 q3 |
+q1 = C % 1.
+Transcript show: (q1 class printString).!
+
+| q1 q2 q3 |
+Transcript show: (C class printString).!
+
+| q1 q2 q3 |
+Transcript show: (C class printString).
+q1 = C % 1.!
+
+| c q1 q2 q3 |
+c = C % 1.!
+
+V initialize.
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].!
+
+V initialize.
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].
+w := 0.
+[t value] on: Error do: [:ex | w := w + 1].
+self assert: [w = 1].!
+
+q1 := C % 1.
+Transcript show: (q1 class printString).
+!
+
+q1 := C % 1.
+q2 := q1 & (C % 2).
+q3 := q2 & (C % 3).
+Transcript show: (q3 length printString).!
+
+q1 := C % 1.
+q2 := q1 & (C % 2).
+q3 := q2 & (C % 3).
+Transcript show: (q3 length printString).!
+
+!Query class methodsFor!
+with: aQ
+	^(self new) initialize;
+		add:  aQ;
+		yourself! !
+!Query class categoriesFor: #with:!public! !
+
+q1 := C % 1.
+q2 := q1 & (C % 2).
+q3 := q2 & (C % 3).
+Transcript show: (q3 length printString).!
+
+!Query class methodsFor!
+with: aQ
+	^(self new)
+		add:  aQ;
+		yourself! !
+!Query class categoriesFor: #with:!public! !
+
+!Query methodsFor!
+initialize
+	Transcript show: 'Query init';
+	list = OrderedCollection new.! !
+!Query categoriesFor: #initialize!public! !
+
+q1 := C % 1.
+q2 := q1 & (C % 2).
+q3 := q2 & (C % 3).
+Transcript show: (q3 length printString).!
+
+q1 := C % 1.
+q2 := q1 & (C % 2).
+q3 := q2 & (C % 3).
+Transcript show: (q3 length printString).!
+
+!Query class methodsFor!
+with: aQ
+	^(self new);
+		add:  aQ;
+		yourself! !
+!Query class categoriesFor: #with:!public! !
+
+q1 := C % 1.
+q2 := q1 & (C % 2).
+q3 := q2 & (C % 3).
+Transcript show: (q3 length printString).!
+
+!Query class methodsFor!
+with: aQ
+	^(self new) 
+		add:  aQ;
+		yourself! !
+!Query class categoriesFor: #with:!public! !
+
+!Query class methodsFor!
+with: aQ
+	^(self new) initialize;
+		add:  aQ;
+		yourself.! !
+!Query class categoriesFor: #with:!public! !
+
+!Query class methodsFor!
+with: aQ
+	^(self new) initialize;
+		add:  aQ;
+		yourself.! !
+!Query class categoriesFor: #with:!public! !
+
+q1 := C % 1.
+q2 := q1 & (C % 2).
+q3 := q2 & (C % 3).
+Transcript show: (q3 length printString).!
+
+!Query methodsFor!
+initialize
+	Transcript show: 'Query init'.
+	list := OrderedCollection new.! !
+!Query categoriesFor: #initialize!public! !
+
+q1 := C % 1.
+q2 := q1 & (C % 2).
+q3 := q2 & (C % 3).
+Transcript show: (q3 length printString).!
+
+q1 := C % 1.!
+
+q1 := C % 1.
+q2 := q1 & (C % 2).!
+
+q1 := C % 1.
+q2 := q1 & (C % 2).
+Transcript show: (q2 class printString).!
+
+q1 := C % 1.
+q2 := q1 & (C % 2).
+Transcript show: (q2 class printString).
+q3 := q2 & (C % 3).!
+
+!Query methodsFor!
+& aQ
+	list addAllLast: (aQ asQuery asList).! !
+!Query categoriesFor: #&!public! !
+
+q1 := C % 1.
+q2 := q1 & (C % 2).
+Transcript show: (q2 class printString).
+q3 := q2 & (C % 3).
+Transcript show: (q3 length printString).!
+
+q1 := C % 1.
+q2 := q1 & (C % 2).
+Transcript show: (q2 class printString).
+q3 := q2 & (C % 3).
+Transcript show: (q3 size printString).!
+
+q1 := C % 1.
+q2 := q1 & (C % 2).
+Transcript show: (q2 class printString).
+q3 := q2 & (C % 3).
+Transcript show: (q2 size printString).!
+
+!Query methodsFor!
+size
+	^list size.! !
+!Query categoriesFor: #size!public! !
+
+Query removeSelector: #length ifAbsent: []!
+
+c := Query with: 1.
+Transcript show: (c size printString).!
+
+a := Query with: 1.
+Transcript show: (a size printString).
+b := a & 2.
+Transcript show: (b size printString).!
+
+a := Query with: 1.
+b := Query with: 2.
+Transcript show: (a size printString).
+c := a & b.
+Transcript show: (c size printString).!
+
+q1 := C % 1.
+Transcript show: (q1 asQuery size printString).!
+
+q1 := C % 1.
+q2 := q1 & (C % 2).
+Transcript show: (q2 size printString).!
+
+q1 := C % 1.
+q2 := q1 & (C % 2).
+Transcript show: (q2 size printString).
+q3 := q2 & (C % 3).
+Transcript show: (q3 size printString).!
+
+c := (C % 1) & (C % 2) & (C % 3);
+Transcript show: (c size printString).!
+
+c := (C % 1) & (C % 2) & (C % 3).
+Transcript show: (c size printString).
+!
+
+c := (C % 1) & ((C % 2) & (C % 3)).
+Transcript show: (c size printString).!
+
+!Prolog methodsFor!
+go: aQuery do: aBlock
+	^1.! !
+!Prolog categoriesFor: #go:do:!public! !
+
+!Prolog methodsFor!
+facts
+	^facts.! !
+!Prolog categoriesFor: #facts!public! !
+
+!Prolog methodsFor!
+go: aQuery do: aBlock
+	aQuery p: self do: aBlock.! !
+!Prolog categoriesFor: #go:do:!public! !
+
+!Query methodsFor!
+p: aProlog do: aBlock
+	(list size = 0) ifTrue: aBlock value.
+! !
+!Query categoriesFor: #p:do:!public! !
+
+!Query methodsFor!
+p: aProlog do: aBlock
+	(list size = 0) ifTrue: [aBlock value].
+! !
+!Query categoriesFor: #p:do:!public! !
+
+!Query methodsFor!
+p: aProlog pos: aPosition do: aBlock
+	(list size >= aPosition) 
+		ifTrue: [aBlock value]
+		ifFalse: [|term | term := list at: 1.
+			     aProlog facts do: [:each | term go: each do: [self p: aProlog pos: aPosition+1 do: aBlock ]].
+			    ].
+
+! !
+!Query categoriesFor: #p:pos:do:!public! !
+
+Query removeSelector: #p:do: ifAbsent: []!
+
+!Prolog methodsFor!
+go: aQuery do: aBlock
+	aQuery p: self pos: 1 do: aBlock.! !
+!Prolog categoriesFor: #go:do:!public! !
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].!
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].!
+
+!Prolog class methodsFor!
+new
+	^(super new) initialize; 
+		yourself.! !
+!Prolog class categoriesFor: #new!public! !
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].
+
+w := OrderedCollection new.!
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].!
+
+!Prolog class methodsFor!
+new
+	^(self new) initialize; 
+		yourself.! !
+!Prolog class categoriesFor: #new!public! !
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].!
+
+!Prolog class methodsFor!
+new
+	^(super new) initialize; 
+		yourself.! !
+!Prolog class categoriesFor: #new!public! !
+
+!Prolog methodsFor!
+initialize
+	Transcript show: 'Prolog init'.
+	facts = Bag new.! !
+!Prolog categoriesFor: #initialize!public! !
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.!
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].!
+
+!Prolog methodsFor!
+initialize
+	Transcript show: 'Prolog init'.
+	facts := Bag new.! !
+!Prolog categoriesFor: #initialize!public! !
+
+!Prolog methodsFor!
+initialize
+	facts := Bag new.! !
+!Prolog categoriesFor: #initialize!public! !
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].!
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].
+
+w := OrderedCollection new.!
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].
+
+w := OrderedCollection new.
+p go: x do: [w add: x value].!
+
+!Prolog methodsFor!
+initialize
+	facts := OrderedCollection new.! !
+!Prolog categoriesFor: #initialize!public! !
+
+!Prolog methodsFor!
+go: aQuery do: aBlock
+	(aQuery asQuery) p: self pos: 1 do: aBlock.! !
+!Prolog categoriesFor: #go:do:!public! !
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].
+
+w := OrderedCollection new.
+p go: x do: [w add: x value].!
+
+!Query methodsFor!
+p: aProlog pos: aPosition do: aBlock
+	(list size > aPosition) 
+		ifTrue: [aBlock value]
+		ifFalse: [|term | term := list at: 1.
+			     aProlog facts do: [:each | term go: each do: [self p: aProlog pos: aPosition+1 do: aBlock ]].
+			    ].
+
+! !
+!Query categoriesFor: #p:pos:do:!public! !
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].
+
+w := OrderedCollection new.
+p go: x do: [w add: x value].!
+
+!Query methodsFor!
+p: aProlog pos: aPosition do: aBlock
+	(list size > aPosition) 
+		ifTrue: [aBlock value]
+		ifFalse: [|term | term := list at: aPosition.
+				Transcript show: 'position ',(aPosition printString).
+			     aProlog facts do: [:each | term go: each do: [self p: aProlog pos: aPosition+1 do: aBlock ]].
+			    ].
+
+! !
+!Query categoriesFor: #p:pos:do:!public! !
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].
+
+w := OrderedCollection new.
+p go: x do: [w add: x value].!
+
+!Query methodsFor!
+p: aProlog pos: aPosition do: aBlock
+	(list size > aPosition) 
+		ifTrue: [aBlock value]
+		ifFalse: [|term | term := list at: aPosition.
+				Transcript show: 'position ',(aPosition printString).
+			     aProlog facts do: [:each | term go: each do: [self p: aProlog pos: aPosition do: aBlock ]].
+			    ].
+
+! !
+!Query categoriesFor: #p:pos:do:!public! !
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].
+
+w := OrderedCollection new.
+p go: x do: [w add: x value].!
+
+!Query methodsFor!
+p: aProlog pos: aPosition do: aBlock
+	(list size > aPosition) 
+		ifTrue: [aBlock value]
+		ifFalse: [|term | term := list at: aPosition.
+				Transcript show: 'position ',(aPosition printString).
+			     aProlog facts do: [:each | term go: each do: aBlock ].
+			    ].
+
+! !
+!Query categoriesFor: #p:pos:do:!public! !
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].
+
+w := OrderedCollection new.
+p go: x do: [w add: x value].!
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].
+
+w := OrderedCollection new.
+p go: x do: [w add: x value].
+self assert: [w = t].!
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].
+
+w := OrderedCollection new.
+p go: x do: [w add: x value].
+self assert: [w = t].!
+
+!Prolog methodsFor!
+goFact: aTerm do: aBlock! !
+!Prolog categoriesFor: #goFact:do:!public! !
+
+!Prolog methodsFor!
+goFact: aTerm do: aBlock
+	facts do: [:each | aTerm go: each do: aBlock ].! !
+!Prolog categoriesFor: #goFact:do:!public! !
+
+!Query methodsFor!
+p: aProlog pos: aPosition do: aBlock
+	list do: [:each | aProlog goFact: each do: aBlock].
+"	(list size > aPosition) 
+		ifTrue: [aBlock value]
+		ifFalse: [|term | term := list at: aPosition.
+				Transcript show: 'position ',(aPosition printString).
+			     aProlog facts do: [:each | term go: each do: aBlock ].
+			    ].
+"
+! !
+!Query categoriesFor: #p:pos:do:!public! !
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].
+
+w := OrderedCollection new.
+p go: x do: [w add: x value].
+self assert: [w = t].!
+
+!Query methodsFor!
+p: aProlog pos: aPosition do: aBlock
+	(list size > aPosition) 
+		ifTrue: [aBlock value]
+		ifFalse: [|term | term := list at: aPosition.
+				Transcript show: 'position ',(aPosition printString).
+			     aProlog goFact: term do: aBlock.
+			    ].
+
+"	list do: [:each | aProlog goFact: each do: aBlock]."
+"	(list size > aPosition) 
+		ifTrue: [aBlock value]
+		ifFalse: [|term | term := list at: aPosition.
+				Transcript show: 'position ',(aPosition printString).
+			     aProlog facts do: [:each | term go: each do: aBlock ].
+			    ].
+"
+! !
+!Query categoriesFor: #p:pos:do:!public! !
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].
+
+w := OrderedCollection new.
+p go: x do: [w add: x value].
+self assert: [w = t].!
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].
+
+w := OrderedCollection new.
+p go: x do: [w add: x value].
+self assert: [w = t].
+w := 0.
+p go: (C % 1) & (C % 2) & (C % 3) do: [w := w + 1].
+self assert: [w = 1].!
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].
+
+w := OrderedCollection new.
+p go: x do: [w add: x value].
+self assert: [w = t].
+w := 0.
+p go: (C % 1) & (C % 2) & (C % 3) do: [w := w + 1].
+self assert: [w = 1].
+w := 0.
+p go: (C % 1) & ((C % 2) & (C % 3)) do: [w := w + 1].
+self assert: [w = 1].!
+
+!Term methodsFor!
+isDefined
+	^self subclassResponsibility.! !
+!Term categoriesFor: #isDefined!public! !
+
+!C methodsFor!
+isDefined
+	^true.! !
+!C categoriesFor: #isDefined!public! !
+
+!V methodsFor!
+isDefined
+	undefined ifTrue: [^false]
+			ifFalse: [^value isDefined].! !
+!V categoriesFor: #isDefined!public! !
+
+!Pair methodsFor!
+isDefined
+	^(a isDefined) & (b isDefined).! !
+!Pair categoriesFor: #isDefined!public! !
+
+!Query methodsFor!
+isLeaf
+	| rs |
+	rs := true.
+	! !
+!Query categoriesFor: #isLeaf!public! !
+
+!Query methodsFor!
+isLeaf
+	| leaf |
+	leaf := true.
+	list do: [:each | leaf := leaf & (each isDefined)].
+	^leaf.
+	! !
+!Query categoriesFor: #isLeaf!public! !
+
+!Query methodsFor!
+p: aProlog pos: aPosition do: aBlock
+		self isLeaf 
+			ifTrue: [aBlock value] 
+			ifFalse: [Transcript show: 'not Leaf'].
+
+"	list do: [:each | aProlog goFact: each do: aBlock]."
+"	(list size > aPosition) 
+		ifTrue: [aBlock value]
+		ifFalse: [|term | term := list at: aPosition.
+				Transcript show: 'position ',(aPosition printString).
+			     aProlog facts do: [:each | term go: each do: aBlock ].
+			    ].
+"
+! !
+!Query categoriesFor: #p:pos:do:!public! !
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].!
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].
+
+w := OrderedCollection new.
+p go: x do: [w add: x value].!
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].
+
+w := OrderedCollection new.
+p go: x do: [w add: x value].
+"self assert: [w = t]."
+w := 0.
+p go: (C % 1) & (C % 2) & (C % 3) do: [w := w + 1].!
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].
+
+"w := OrderedCollection new.
+p go: x do: [w add: x value].
+self assert: [w = t]."
+w := 0.
+p go: (C % 1) & (C % 2) & (C % 3) do: [w := w + 1].
+self assert: [w = 1].
+!
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].
+
+"w := OrderedCollection new.
+p go: x do: [w add: x value].
+self assert: [w = t]."
+w := 0.
+p go: (C % 1) & (C % 2) & (C % 3) do: [w := w + 1].
+self assert: [w = 1].
+w := 0.
+p go: (C % 1) & ((C % 2) & (C % 3)) do: [w := w + 1].
+self assert: [w = 1].!
+
+!C class methodsFor!
+% aValue
+	 ^(self new) initialize: aValue;
+        yourself.
+! !
+!C class categoriesFor: #%!public! !
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].
+
+"w := OrderedCollection new.
+p go: x do: [w add: x value].
+self assert: [w = t]."
+w := 0.
+p go: (C % 1) & (C % 2) & (C % 3) do: [w := w + 1].
+self assert: [w = 1].
+w := 0.
+p go: (C % 1) & ((C % 2) & (C % 3)) do: [w := w + 1].
+self assert: [w = 1].!
+
+!Query methodsFor!
+initialize
+	list := OrderedCollection new.! !
+!Query categoriesFor: #initialize!public! !
+
+V initialize.
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].
+
+"w := OrderedCollection new.
+p go: x do: [w add: x value].
+self assert: [w = t]."
+w := 0.
+p go: (C % 1) & (C % 2) & (C % 3) do: [w := w + 1].
+self assert: [w = 1].
+w := 0.
+p go: (C % 1) & ((C % 2) & (C % 3)) do: [w := w + 1].
+self assert: [w = 1].
+
+
+!
+
+!Query methodsFor!
+p: aProlog do: aBlock
+		self isLeaf 
+			ifTrue: [aBlock value] 
+			ifFalse: [Transcript show: 'not Leaf'].
+
+"	list do: [:each | aProlog goFact: each do: aBlock]."
+"	(list size > aPosition) 
+		ifTrue: [aBlock value]
+		ifFalse: [|term | term := list at: aPosition.
+				Transcript show: 'position ',(aPosition printString).
+			     aProlog facts do: [:each | term go: each do: aBlock ].
+			    ].
+"
+! !
+!Query categoriesFor: #p:do:!public! !
+
+!Prolog methodsFor!
+go: aQuery do: aBlock
+	(aQuery asQuery) p: self do: aBlock.! !
+!Prolog categoriesFor: #go:do:!public! !
+
+| do |
+#od do: [:od | do := od].
+do
+!
+
+| do |
+#od do: [:od | do := od].
+Transcript show: do!
+
+| do |
+#ode do: [:od | do := od].
+Transcript show: do
+!
+
+| do |
+#ode do: [:od | do := od].
+Transcript show: do!
+
+| to |
+to := 0.
+(2 to: 4) inject: 1 into: [:a :co | to := to + a * co. co].
+Transcript  show: to printString.!
+
+| to |
+to := 0.
+(2 to: 4) inject: 1 into: [:a :co | to := to + a * co. co].
+Transcript  show: to printString.!
+
+| to |
+to := 0.
+(2 to: 4) inject: 1 into: [:a :co | 
+Transcript  show: a printString.
+Transcript  show: ','.
+Transcript  show: co printString.
+to := to + a * co. co].
+Transcript  show: to printString.
+
+!
+
+| to |
+to := 0.
+(2 to: 4) inject: 1 into: [:a :co | 
+Transcript  show: a printString.
+Transcript  show: ','.
+Transcript  show: co printString.
+to := to + a * co. co].
+
+
+!
+
+| to |
+to := 0.
+(2 to: 4) inject: 1 into: [:a :co | 
+Transcript  show: a printString.
+Transcript  show: ','.
+"Transcript  show: co printString."
+to := to + a * co. co].
+
+
+!
+
+| to |
+to := 0.
+(2 to: 4) inject: 1 into: [:a :co | 
+Transcript  show: a printString.
+Transcript  show: ','.
+Transcript  show: co printString.
+Transcript  show: '|'.
+to := to + a * co. co].
+
+
+!
+
+| s |
+(s := Set with: #yourself) add: s; collect: [:each | Transcript show: each size printString ]
+
+
+
+!
+
+| s |
+(s := Set with: #yourself) add: s; collect: [:each | Transcript show: each size printString ]
+
+
+
+!
+
+|s|
+(s := Set with: #yourself) add: s.
+
+!
+
+Transcript show: s size printString.!
+
+|s|
+(s := Set with: #yourself) add: s.
+Transcript show: s size printString.
+!
+
+!
+
+|s|
+(s := Set with: #yourself) add: s.
+Transcript show: s size printString.
+!
+
+|s|
+(s := Set with: #yourself) add: s.
+Transcript show: s at:1.
+!
+
+| s |
+(s := Set with: #yourself) add: s; collect: [:each | each size]
+!
+
+| s |
+(s := Set with: #yourself) add: s; collect: [:each | Transcript show: (each size printString )]
+!
+
+| s |
+(s := Set with: #yourself) add: s; collect: [:each | Transcript show: (each size printString ). Transcript show: '|'.]
+!
+
+| s |
+(s := Set with: #yourself) add: s; collect: [:each | Transcript show: (each size printString ). Transcript show: '|'.]
+!
+
+!Query methodsFor!
+p: aProlog pos: aPosition do: aBlock
+		self isLeaf 
+			ifTrue: [aBlock value] 
+			ifFalse: [
+				
+			].
+! !
+!Query categoriesFor: #p:pos:do:!public! !
+
+Query removeSelector: #p:pos:do: ifAbsent: []!
+
+!Query methodsFor!
+p: aProlog do: aBlock
+		self isLeaf 
+			ifTrue: [aBlock value] 
+			ifFalse: [Transcript show: 'not Leaf'].
+
+"	list do: [:each | aProlog goFact: each do: aBlock]."
+"	(list size > aPosition) 
+		ifTrue: [aBlock value]
+		ifFalse: [|term | term := list at: aPosition.
+				Transcript show: 'position ',(aPosition printString).
+			     aProlog facts do: [:each | term go: each do: aBlock ].
+			    ].
+"
+! !
+!Query categoriesFor: #p:do:!public! !
+
+Prolog removeSelector: #goFact:do: ifAbsent: []!
+
+"09:10:08, 22 czerwca 2017: Image saved"!
+
+"09:10:11, 22 czerwca 2017: Image saved"!
+
+"09:37:55, 22 czerwca 2017: Dolphin Smalltalk Professional started"!
+
+t := L % 1, (V @ 2 % 3).
+self assert: [t car car value isNil].
+self assert: [t car cdr value = 1].
+self assert: [t car value car isNil].
+self assert: [t car value cdr = 1].
+self assert: [t cdr cdr value = 3].
+
+a := V @ 1.
+b := V @ 2.
+c := V @ 1.
+self assert: [a ~= b].
+self assert: [a == c].
+
+t := C % 1 @ #z.
+self assert: [t car value = 1].
+w := 0.
+[t value] on: Error do: [:ex | w := w + 1].
+self assert: [w = 1].
+
+C % 1 go: C % 2 do: [self assert: [false]].
+
+w := 0.
+C % 1 go: C % 1 do: [w := w + 1].
+self assert: [w = 1].
+
+x := V @ #x.
+y := V @ #y.
+w := 0.
+x % 1 go: C % 2, y do:
+    [w := w + 1.
+    self assert: [x value = 2].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+
+w := 0.
+C % 1 % 2 go: x do:
+    [w := w + 1.
+    self assert: [x value car = 1].
+    self assert: [x cdr value = 2]].
+self assert: [w = 1].
+
+w := 0.
+x go: C % $a do:
+    [w := w + 1.
+    x go: C % $b do: [self assert: [false]]].
+x go: C % $b do: [w := w + 1].
+self assert: [w = 2].
+
+w := 0.
+x % 1 go: y, y do:
+    [w := w + 1.
+    self assert: [x value = 1].
+    self assert: [y value = 1]].
+self assert: [w = 1].
+
+x go: L, x do: [self assert: [false]].!
+
+"09:44:15, 22 czerwca 2017: Image saved"!
+
+"13:36:26, 25 czerwca 2017: Dolphin Smalltalk Professional started"!
+
+!Prolog methodsFor!
+isLeaf: aQuery
+	| leaf list |
+	leaf := true.
+	list := aQuery asList.
+	list do: [:each | leaf := leaf & (each isDefined)].
+	^leaf.! !
+!Prolog categoriesFor: #isLeaf:!public! !
+
+!Prolog methodsFor!
+isLeaf: aQuery
+	| leaf list |
+	leaf := true.
+	list := aQuery asList.
+	list do: [:each | leaf := leaf & (((each isC) & (self isFact: each)  | each isDefined ))].
+	^leaf.! !
+!Prolog categoriesFor: #isLeaf:!public! !
+
+!Prolog methodsFor!
+isLeaf: aQuery
+	| leaf list |
+	leaf := true.
+	list := aQuery asList.
+	list do: [:each | leaf := leaf & (((each isC) & (self isFact: each)  | each isDefined))].
+	^leaf.! !
+!Prolog categoriesFor: #isLeaf:!public! !
+
+!Prolog methodsFor!
+isFact: aTerm
+	| is |
+	is := false.
+	! !
+!Prolog categoriesFor: #isFact:!public! !
+
+!Prolog methodsFor!
+isFact: aTerm
+	| is |
+	is := false.
+	"facts do: [:each | each go: aTerm do [is := true]]."
+	^is.
+	! !
+!Prolog categoriesFor: #isFact:!public! !
+
+!Prolog methodsFor!
+isFact: aTerm
+	| is |
+	is := false.
+	facts do: [:each | each go: aTerm do: [is := true]].
+	^is.
+	! !
+!Prolog categoriesFor: #isFact:!public! !
+
+!Prolog methodsFor!
+go: aQuery do: aBlock
+		self isLeaf: aQuery 
+			ifTrue: [aBlock value.] 
+			ifFalse: [^true .]
+! !
+!Prolog categoriesFor: #go:do:!public! !
+
+!Prolog methodsFor!
+go: aQuery do: aBlock
+		(self isLeaf: aQuery )
+			ifTrue: [aBlock value.] 
+			ifFalse: [^true .]
+! !
+!Prolog categoriesFor: #go:do:!public! !
+
+!Prolog methodsFor!
+go: aQuery do: aBlock
+		(self isLeaf: aQuery)
+			ifTrue: [aBlock value.] 
+			ifFalse: [^true .]
+! !
+!Prolog categoriesFor: #go:do:!public! !
+
+x := V @ #x.
+t := #(1 2 3) asOrderedCollection.
+p := Prolog new.
+t do: [:each | p fact: C % each].
+w := OrderedCollection new.
+"p go: x do: [w add: x value].
+self assert: [w = t]."
+w := 0.
+p go: (C % 1) & (C % 2) & (C % 3) do: [w := w + 1].
+self assert: [w = 1].
+w := 0.
+p go: (C % 1) & ((C % 2) & (C % 3)) do: [w := w + 1].
+self assert: [w = 1].!
+
+!Query methodsFor!
+replace: aTerm with: aQuery
+	^(list copyWith: (aQuery asQuery); remove: aTerm; yourself).! !
+!Query categoriesFor: #replace:with:!public! !
+
+c1 := C % 1.
+c2 := C % 2.
+c3 := C % 3.
+
+q := c1 & c2 & c3.
+
+Transcript show: (q size).
+!
+
+c1 := C % 1.
+c2 := C % 2.
+c3 := C % 3.
+
+q := c1 & c2 & c3.
+
+Transcript show: (q size printString ).
+!
+
+Transcript show: (q printString ).!
+
+c1 := C % 1.
+c2 := C % 2.
+c3 := C % 3.
+c45 := (C % 4) & (C % 5).
+q1 := c1 & c2 & c3.
+q2 := q1 reprace: c1 with: c45;
+
+Transcript show: (q1 size printString ).
+Transcript show: ', '.!
+
+c1 := C % 1.
+c2 := C % 2.
+c3 := C % 3.
+c45 := (C % 4) & (C % 5).
+q1 := c1 & c2 & c3.
+q2 := q1 reprace: c1 with: c45.
+
+Transcript show: (q1 size printString ).
+Transcript show: ', '.
+Transcript show: (q2 size printString ).
+!
+
+Transcript show: ', '.!
+
+c1 := C % 1.
+c2 := C % 2.
+c3 := C % 3.
+c45 := (C % 4) & (C % 5).
+q1 := c1 & c2 & c3.
+q2 := q1 replace: c1 with: c45.
+
+Transcript show: (q1 size printString ).
+Transcript show: ', '.
+Transcript show: (q2 size printString ).
+!
+
+c1 := C % 1.
+c2 := C % 2.
+c3 := C % 3.
+c45 := (C % 4) & (C % 5).
+"q1 := c1 & c2 & c3.
+q2 := q1 replace: c1 with: c45.
+
+Transcript show: (q1 size printString ).
+Transcript show: ', '.
+Transcript show: (q2 size printString )."
+o := OrderedCollection new.
+o add: c1.
+o add: c2.
+o add: c3.
+o remove: c1.
+!
+
+c1 := C % 1.
+c2 := C % 2.
+c3 := C % 3.
+c45 := (C % 4) & (C % 5).
+"q1 := c1 & c2 & c3.
+q2 := q1 replace: c1 with: c45.
+
+Transcript show: (q1 size printString ).
+Transcript show: ', '.
+Transcript show: (q2 size printString )."
+o := Bag new.
+o add: c1.
+o add: c2.
+o add: c3.
+o remove: c1.!
+
+c1 := C % 1.
+c11 := C % 1.
+c2 := C % 2.
+c3 := C % 3.
+c45 := (C % 4) & (C % 5).
+"q1 := c1 & c2 & c3.
+q2 := q1 replace: c1 with: c45.
+
+Transcript show: (q1 size printString ).
+Transcript show: ', '.
+Transcript show: (q2 size printString )."
+o := Bag new.
+o add: c1.
+o add: c2.
+o add: c3.
+o remove: c11.
+!
+
+c1 := C % 1.
+c11 := C % 1.
+c2 := C % 2.
+c3 := C % 3.
+c45 := (C % 4) & (C % 5).
+"q1 := c1 & c2 & c3.
+q2 := q1 replace: c1 with: c45.
+
+Transcript show: (q1 size printString ).
+Transcript show: ', '.
+Transcript show: (q2 size printString )."
+o := Bag new.
+o add: c1.
+o add: c2.
+o add: c3.
+
+Transcript show: ((c1 = c1) printString )
+!
+
+c1 := C % 1.
+c11 := C % 1.
+c2 := C % 2.
+c3 := C % 3.
+c45 := (C % 4) & (C % 5).
+"q1 := c1 & c2 & c3.
+q2 := q1 replace: c1 with: c45.
+
+Transcript show: (q1 size printString ).
+Transcript show: ', '.
+Transcript show: (q2 size printString )."
+o := Bag new.
+o add: c1.
+o add: c2.
+o add: c3.
+
+Transcript show: ((c1 == c1) printString )
+!
+
+c1 := C % 1.
+c11 := C % 1.
+c2 := C % 2.
+c3 := C % 3.
+c45 := (C % 4) & (C % 5).
+"q1 := c1 & c2 & c3.
+q2 := q1 replace: c1 with: c45.
+
+Transcript show: (q1 size printString ).
+Transcript show: ', '.
+Transcript show: (q2 size printString )."
+o := Bag new.
+o add: c1.
+o add: c2.
+o add: c3.
+
+Transcript show: ((c1 == c11) printString )
+!
+
+c1 := C % 1.
+c11 := C % 1.
+c2 := C % 2.
+c3 := C % 3.
+c45 := (C % 4) & (C % 5).
+"q1 := c1 & c2 & c3.
+q2 := q1 replace: c1 with: c45.
+
+Transcript show: (q1 size printString ).
+Transcript show: ', '.
+Transcript show: (q2 size printString )."
+o := Bag new.
+o add: c1.
+o add: c2.
+o add: c3.
+
+Transcript show: ((c1 = c11) printString )
+!
+
+c1 := C % 1.
+c11 := C % 1.
+c2 := C % 2.
+c3 := C % 3.
+c45 := (C % 4) & (C % 5).
+"q1 := c1 & c2 & c3.
+q2 := q1 replace: c1 with: c45.
+
+Transcript show: (q1 size printString ).
+Transcript show: ', '.
+Transcript show: (q2 size printString )."
+o := Bag new.
+o add: c1.
+o add: c2.
+o add: c3.
+
+Transcript show: ((c1 = c1) printString )
+!
+
+!C methodsFor!
+= aValue
+	^value = aValue value.! !
+!C categoriesFor: #=!public! !
+
+c1 := C % 1.
+c11 := C % 1.
+c2 := C % 2.
+c3 := C % 3.
+c45 := (C % 4) & (C % 5).
+"q1 := c1 & c2 & c3.
+q2 := q1 replace: c1 with: c45.
+
+Transcript show: (q1 size printString ).
+Transcript show: ', '.
+Transcript show: (q2 size printString )."
+o := Bag new.
+o add: c1.
+o add: c2.
+o add: c3.
+
+Transcript show: ((c1 = c1) printString )
+!
+
+c1 := C % 1.
+c11 := C % 1.
+c2 := C % 2.
+c3 := C % 3.
+c45 := (C % 4) & (C % 5).
+"q1 := c1 & c2 & c3.
+q2 := q1 replace: c1 with: c45.
+
+Transcript show: (q1 size printString ).
+Transcript show: ', '.
+Transcript show: (q2 size printString )."
+o := Bag new.
+o add: c1.
+o add: c2.
+o add: c3.
+
+Transcript show: ((c1 == c1) printString )
+!
+
+c1 := C % 1.
+c11 := C % 1.
+c2 := C % 2.
+c3 := C % 3.
+c45 := (C % 4) & (C % 5).
+"q1 := c1 & c2 & c3.
+q2 := q1 replace: c1 with: c45.
+
+Transcript show: (q1 size printString ).
+Transcript show: ', '.
+Transcript show: (q2 size printString )."
+o := Bag new.
+o add: c1.
+o add: c2.
+o add: c3.
+
+Transcript show: ((c1 = c11) printString )
+!
+
+c1 := C % 1.
+c11 := C % 1.
+c2 := C % 2.
+c3 := C % 3.
+c45 := (C % 4) & (C % 5).
+"q1 := c1 & c2 & c3.
+q2 := q1 replace: c1 with: c45.
+
+Transcript show: (q1 size printString ).
+Transcript show: ', '.
+Transcript show: (q2 size printString )."
+o := Bag new.
+o add: c1.
+o add: c2.
+o add: c3.
+
+Transcript show: ((c1 == c11) printString )
+!
+
+!C methodsFor!
+= aTerm
+	(aTerm isMemberOf: C)
+		ifTrue: [^value = aTerm value] 
+		ifFalse: [^false]! !
+!C categoriesFor: #=!public! !
+
+!V methodsFor!
+= aTerm
+	(aTerm isMemberOf: V)
+		ifTrue: [^name = aTerm name] 
+		ifFalse: [^false]
+! !
+!V categoriesFor: #=!public! !
+
+c1 := C % 1.
+c11 := C % 1.
+c2 := C % 2.
+c3 := C % 3.
+c45 := (C % 4) & (C % 5).
+"q1 := c1 & c2 & c3.
+q2 := q1 replace: c1 with: c45.
+
+Transcript show: (q1 size printString ).
+Transcript show: ', '.
+Transcript show: (q2 size printString )."
+o := Bag new.
+o add: c1.
+o add: c2.
+o add: c3.
+
+Transcript show: ((c1 == c11) printString )
+!
+
+c1 := C % 1.
+c11 := C % 1.
+c2 := C % 2.
+c3 := C % 3.
+c45 := (C % 4) & (C % 5).
+"q1 := c1 & c2 & c3.
+q2 := q1 replace: c1 with: c45.
+
+Transcript show: (q1 size printString ).
+Transcript show: ', '.
+Transcript show: (q2 size printString )."
+o := Bag new.
+o add: c1.
+o add: c2.
+o add: c3.
+
+Transcript show: ((c1 = c11) printString )
+!
+
+c1 := C % 1.
+c11 := C % 1.
+c2 := C % 2.
+c3 := C % 3.
+c45 := (C % 4) & (C % 5).
+"q1 := c1 & c2 & c3.
+q2 := q1 replace: c1 with: c45.
+
+Transcript show: (q1 size printString ).
+Transcript show: ', '.
+Transcript show: (q2 size printString )."
+o := Bag new.
+o add: c1.
+o add: c2.
+o add: c3.
+o remove: c11.
+!
+
+c1 := C % 1.
+c11 := C % 1.
+c2 := C % 2.
+c3 := C % 3.
+c45 := (C % 4) & (C % 5).
+"q1 := c1 & c2 & c3.
+q2 := q1 replace: c1 with: c45.
+
+Transcript show: (q1 size printString ).
+Transcript show: ', '.
+Transcript show: (q2 size printString )."
+o := Bag new.
+o add: c1.
+o add: c2.
+o add: c3.
+o remove: c1.
+!
+
+c1 := C % 1.
+c2 := C % 2.
+c3 := C % 3.
+c45 := (C % 4) & (C % 5).
+q1 := c1 & c2 & c3.
+q2 := q1 replace: c1 with: c45.
+
+Transcript show: (q1 size printString ).
+Transcript show: ', '.
+Transcript show: (q2 size printString ).
+!
+
+!Query methodsFor!
+replace: aTerm with: aQuery
+	| new |
+	new := self copy.
+	new remove: aTerm.
+	"^
+	^(list copyWith: (aQuery asQuery); remove: aTerm; yourself)."! !
+!Query categoriesFor: #replace:with:!public! !
+
+"15:18:21, 25 czerwca 2017: Image saved"!
+
